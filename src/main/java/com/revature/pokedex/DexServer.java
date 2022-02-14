@@ -12,6 +12,7 @@ public class DexServer {
         server.getConnector();
         server.addContext("",null);
         server.addServlet("", "dexServlet", dexService).addMapping("/");
+        server.addServlet("", "searchFormServlet", "sfService").addMapping("/search");
         try {
             server.start();
         } catch (LifecycleException e) {
